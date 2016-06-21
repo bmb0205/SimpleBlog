@@ -1,0 +1,12 @@
+<div class="photos">
+    <div ng-controller="PhotoCtrl">
+    <h1>Photo Gallery</h1>
+        <p>Display count: 10, 25, 100, All
+        </p>
+    <table>
+        <tr ng-repeat="image in images">
+        <td><img class="thumb" src="{{image.url}}"></td>
+        </tr>
+    </table>
+    </div>
+</div>

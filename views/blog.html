@@ -1,0 +1,20 @@
+<div class="blog">
+    <div ng-controller="BlogCtrl">
+        <h1>Blog</h1>
+        <hr class="featurette-divider blog-divider">
+        <table>
+            <tr ng-repeat="blogpost in blog">
+                <td>
+                    <h2>{{blogpost.title}}<br></h2>
+                    <h3>user{{blogpost.id}}@gmail.com</h3>
+                    <p>{{blogpost.body}}</p>
+                    <br>
+                    <div class="comment">
+                        View Comments
+                    </div>
+                    <hr class="featurette-divider blog-divider">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
