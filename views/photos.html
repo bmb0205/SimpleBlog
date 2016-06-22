@@ -1,12 +1,16 @@
 <div class="photos">
-    <div ng-controller="PhotoCtrl">
-    <h1>Photo Gallery</h1>
-        <p>Display count: 10, 25, 100, All
-        </p>
-    <table>
-        <tr ng-repeat="image in images">
-        <td><img class="thumb" src="{{image.url}}"></td>
-        </tr>
-    </table>
-    </div>
+  <h1>Photo Gallery</h1>
+  <p>Display count:
+    <a href="#">10</a>
+    <a href="#">25</a>
+    <a href="#">100</a>
+    <a href="#">All</a>
+  </p>
+  <ul class="gallery gallery2" ng-controller="PhotoCtrl">
+    <li ng-repeat="image in images | limitTo:quantity">
+      <a ng-click="openLightboxModal($index, image.title)">
+        <img ng-src="{{image.url}}" class="img-thumbnail">
+      </a>
+    </li>
+  </ul>
 </div>

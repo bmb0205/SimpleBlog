@@ -1,16 +1,18 @@
 <div class="blog">
     <div ng-controller="BlogCtrl">
         <h1>Blog</h1>
-        <hr class="featurette-divider blog-divider">
+        <h2>Search:<input type="text" ng-model="searchText"/>
+        </h2>
+          <hr class="featurette-divider blog-divider">
         <table>
-            <tr ng-repeat="blogpost in blog">
+            <tr ng-repeat="blogpost in blog | filter:searchText">
                 <td>
                     <h2>{{blogpost.title}}<br></h2>
                     <h3>user{{blogpost.id}}@gmail.com</h3>
                     <p>{{blogpost.body}}</p>
                     <br>
                     <div class="comment">
-                        View Comments
+                        <a href="#/comments">View Comments</a>
                     </div>
                     <hr class="featurette-divider blog-divider">
                 </td>
